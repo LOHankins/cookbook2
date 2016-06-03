@@ -30,13 +30,20 @@ class PeopleController < ApplicationController
 	def update
 		@person = Person.find(params[:id])
 
-		if @person.save
+		if @person.update(person_params)
 			redirect_to @person, notice: " successfully updated"
 		else
 			render :new
 		end
 	end
 
+	# destroy
+	def destroy
+	  @person = Person.find(params[:id])
+	  @person.destroy
+
+	  redirect_to "/people"
+	end
 
 	private 
   	def person_params
