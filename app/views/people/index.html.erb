@@ -1,0 +1,16 @@
+<h2>People <a href="/people/new">(+)</a></h2>
+
+<ul>
+  <% @people.each do |person| %>
+    <li>
+      <a href="/people/<%= person.id %>">
+        <%= person.fname %>
+        <%= person.mname %>
+        <%= person.lname %>
+        <%= person.email %>
+        <%= person.user_id %>
+
+      </a>
+    </li>
+  <% end %>
+</ul>

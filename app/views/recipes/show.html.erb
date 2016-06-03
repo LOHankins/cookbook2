@@ -1,0 +1,12 @@
+<h2><%= @recipe.name %> 
+<a href="/recipes/<%= @recipe.id %>/edit">(edit)</a></h2>
+
+<%= render 'form' %>
+
+<ul>
+	<li>
+		<%= link_to "recipes", recipes_path %>
+		<%= link_to "create recipe", new_recipe_path(@recipe) %>
+	<%= link_to "show ingredients for this recipe", recipes_path(@recipe) %>
+	</li>
+</ul>

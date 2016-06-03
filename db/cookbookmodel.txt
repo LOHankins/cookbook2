@@ -1,0 +1,9 @@
+rails generate resource user login:text password:text
+
+rails generate resource person fname:text mname:text lname:text email:text user:references
+
+rails generate resource recipe name:text prep:text cook:text description:text instructions:text person:references
+
+rails generate resource ingredient amount:text unit:text name:text recipe:references
+
+rails generate resource stuff comment:text rating:float used:boolean favorite:boolean story:text person:references recipe:references

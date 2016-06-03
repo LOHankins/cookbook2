@@ -1,0 +1,43 @@
+<%= form_for @recipe do |f| %>
+
+  <% if @recipe.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <h2>errors:</h2>
+        <% @recipe.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end  %>
+
+  <span class="newrecipe">
+  <%= f.label :"Recipe" %>
+  <%= f.text_field :name %>
+  </span>
+
+  <span class="newrecipe">
+  <%= f.label :"prep time" %>
+  <%= f.text_field :prep %>
+  </span>
+
+  <span class="newrecipe">
+  <%= f.label :"cook time" %>
+  <%= f.text_field :cook %>
+  </span>
+
+  <span class="newrecipe">
+  <%= f.label :description %>
+  <%= f.text_field :description %>
+  </span>
+
+  <span class="newrecipe">
+  <%= f.label :instructions %>
+  <%= f.text_field :instructions %>
+  </span>
+  
+  <span class="newrecipe">
+  <%= f.submit %>
+  </span>
+
+<% end %>

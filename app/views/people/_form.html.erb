@@ -1,0 +1,38 @@
+<%= form_for @person do |f| %>
+
+  <% if @person.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <h2>errors:</h2>
+        <% @person.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end  %>
+
+  <span class="newperson">
+  <%= f.label :"First Name" %>
+  <%= f.text_field :fname %>
+  </span>
+
+  <span class="newperson">
+  <%= f.label :"Middle Name" %>
+  <%= f.text_field :mname %>
+  </span>
+
+  <span class="newperson">
+  <%= f.label :"Last Name" %>
+  <%= f.text_field :lname %>
+  </span>
+
+  <span class="newperson">
+  <%= f.label :"email" %>
+  <%= f.text_field :email %>
+  </span>
+  
+  <span class="newperson">
+  <%= f.submit %>
+  </span>
+
+<% end %>
